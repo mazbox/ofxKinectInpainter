@@ -1,0 +1,22 @@
+Simple addon for filling holes in kinect depth maps using the cv::inpaint() function.
+
+usage:
+
+	setup:
+		// the algorithm is quite demanding compuationally,
+		// so you can do a downsampled version
+		kinectInpainter.setup(width=640, height=480, downsampling=8);
+	
+	update:
+		
+		
+		kinectInpainter.inpaint(depthImage);
+		
+	
+	configuration:
+	
+		// 3-10 is a good value
+		kinectInpainter.setInpaintingRadius(int radius);
+	
+		// 4-8 is realistic
+		kinectInpainter.setDownsampling(int downsampleFactor);
